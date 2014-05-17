@@ -1,4 +1,4 @@
-![SIMPLE SERVER GEOIP](http://tukangslicing.net/img/tukangslicing-logo.png)
+![SIMPLE SERVER GEOIP](https://raw.githubusercontent.com/aredo/simple-server-geoip/master/ip.png)
 ## simple-server-geoip
 
 A very simple geoip server to show you about your IP public
