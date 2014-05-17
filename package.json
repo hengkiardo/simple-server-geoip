@@ -1,0 +1,28 @@
+{
+  "name": "simple-server-geoip",
+  "version": "0.0.1",
+  "description": "A very simple geoip server ",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Hengki Sihombing <hengki.sihombing@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:aredo/simple-server-geoip.git"
+  },
+  "keywords": [
+    "geoip",
+    "ip",
+    "ip address"
+  ],
+  "bugs": {
+    "url": "https://github.com/aredo/simple-server-geoip/issues"
+  },
+  "homepage": "https://github.com/aredo/simple-server-geoip",
+  "devDependencies": {
+    "express": "^4.1.0",
+    "geoip-lite": "^1.1.3"
+  }
+}
