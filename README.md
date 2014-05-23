@@ -28,7 +28,7 @@ A very simple geoip server to show you about your IP public
 }
 
 ```
-[DEMO](http://hengkiardo.com:5000)
+[DEMO](http://lite-server-geoip.herokuapp.com/)
 
 
 ### API
