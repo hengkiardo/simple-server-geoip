@@ -56,13 +56,13 @@ app.get('/', function (req, res, next) {
 
   var ip_lookup = geoip.lookup(ip);
 
-  console.log(ip_lookup.country);
+  if(ip_lookup !== null) {
+    var country_detail = _.find(countries, function(country) {
+      return country['cca2'] == ip_lookup.country
+    });
 
-  var country_detail = _.find(countries, function(country) {
-    return country['cca2'] == ip_lookup.country
-  });
-
-  ip_lookup.country = country_detail;
+    ip_lookup.country = country_detail;
+  }
 
   var result = _.merge({ip : ip}, ip_lookup);
 
