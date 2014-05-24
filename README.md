@@ -35,6 +35,11 @@ A very simple geoip server to show you about your IP public
 
 ##### Country List
 
+``` shell
+/country/
+
+```
+
 response:
 
 ```js
