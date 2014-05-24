@@ -12,20 +12,61 @@ A very simple geoip server to show you about your IP public
   ],
   "country": {
     "name": "Indonesia",
-    "alpha-2": "ID",
-    "alpha-3": "IDN",
-    "country-code": "360",
-    "iso_3166-2": "ISO 3166-2:ID",
-    "region-code": "142",
-    "sub-region-code": "035"
+    "nativeName": "Indonesia",
+    "tld": [
+      ".id"
+    ],
+    "cca2": "ID",
+    "ccn3": "360",
+    "cca3": "IDN",
+    "currency": [
+      "IDR"
+    ],
+    "callingCode": [
+      "62"
+    ],
+    "capital": "Jakarta",
+    "altSpellings": [
+      "ID",
+      "Republic of Indonesia",
+      "Republik Indonesia"
+    ],
+    "relevance": "2",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "language": [
+        "Indonesian"
+    ],
+    "languageCodes": [
+        "id"
+    ],
+    "translations": {
+      "fr": "Indonésie",
+      "nl": "Indonesië",
+      "de": "Indonesien",
+      "it": "Indonesia",
+      "ja": "インドネシア",
+      "es": "Indonesia",
+      "hr": "Indonezija"
+    },
+    "latlng": [-6.2,
+        106.8
+    ],
+    "demonym": "Indonesian",
+    "borders": [
+      "TLS",
+      "MYS",
+      "PNG"
+    ],
+    "area": 1904569
   },
   "region": "04",
   "city": "Jakarta",
-  "ll": [
-    -6.1744,
-    106.8294
+  "ll": [-6.1744,
+      106.8294
   ]
 }
+
 
 ```
 [DEMO](http://lite-server-geoip.herokuapp.com/)
