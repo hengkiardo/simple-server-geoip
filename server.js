@@ -1,7 +1,7 @@
 var express = require('express');
 var geoip = require('geoip-lite');
 var _ = require('lodash');
-var countries = require('./data/countries')
+var countries = require('./data/countries-full');
 
 var app = express();
 var port = process.env.PORT || 5000;
@@ -10,18 +10,56 @@ app.get('/country', function (req, res, next) {
   res.json(countries);
 })
 
+app.get('/country/get', function (req, res, next) {
+
+  var country = _.find(countries, req.query);
+
+  if(country == undefined) {
+    res.json(204, { 'msg' : 'No country found'});
+  } else {
+    res.json(200, country);
+  }
+})
+
+app.get('/country/region', function (req, res, next) {
+
+  var result = [];
+
+  var country_region = _.find(countries, function(country) {
+      return
+    });
+
+  var country_region = _.reduce(countries, function(result, country, key) {
+
+    if(country.region.toLowerCase() == req.query.name.toLowerCase()) {
+      result.push(country);
+    }
+    return result;
+  }, []);
+
+  if(country_region == undefined) {
+    res.json(204, { 'msg' : 'No country found'});
+  } else {
+    res.json(200, country_region);
+  }
+})
+
+
 app.get('/', function (req, res, next) {
-  var ip = "118.137.237.113"
-          || req.ip
+  var ip = req.ip
           || req.headers['x-forwarded-for']
           || req.connection.remoteAddress
           || req.socket.remoteAddress
           || req.connection.socket.remoteAddress;
 
+          // console.log(ip);
+
   var ip_lookup = geoip.lookup(ip);
 
+  console.log(ip_lookup.country);
+
   var country_detail = _.find(countries, function(country) {
-    return country['alpha-2'] == ip_lookup.country
+    return country['cca2'] == ip_lookup.country
   });
 
   ip_lookup.country = country_detail;
