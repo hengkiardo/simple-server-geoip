@@ -46,13 +46,10 @@ app.get('/country/region', function (req, res, next) {
 
 
 app.get('/', function (req, res, next) {
-  var ip = req.ip
-          || req.headers['x-forwarded-for']
+  var ip = req.headers['x-forwarded-for']
           || req.connection.remoteAddress
           || req.socket.remoteAddress
           || req.connection.socket.remoteAddress;
-
-          // console.log(ip);
 
   var ip_lookup = geoip.lookup(ip);
 
