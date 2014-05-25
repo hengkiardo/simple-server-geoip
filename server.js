@@ -2,6 +2,7 @@ var express = require('express');
 var geoip = require('geoip-lite');
 var _ = require('lodash');
 var countries = require('./data/countries-full');
+var express_enforces_ssl = require('express-enforces-ssl');
 
 var app = express();
 var port = process.env.PORT || 5000;
@@ -66,6 +67,7 @@ app.get('/', function (req, res, next) {
   res.json(result);
 });
 
+app.use(express_enforces_ssl.HTTPS());
 
 app.listen(port, function() {
   console.log("✔ Express server listening on port %d ", port);
