@@ -7,6 +7,10 @@ var express_enforces_ssl = require('express-enforces-ssl');
 var app = express();
 var port = process.env.PORT || 5000;
 
+app.enable('trust proxy');
+
+app.use(express_enforces_ssl.HTTPS(true));
+
 app.get('/country', function (req, res, next) {
   res.json(countries);
 })
@@ -47,6 +51,7 @@ app.get('/country/region', function (req, res, next) {
 
 
 app.get('/', function (req, res, next) {
+
   var ip = req.headers['x-forwarded-for']
           || req.connection.remoteAddress
           || req.socket.remoteAddress
@@ -67,9 +72,6 @@ app.get('/', function (req, res, next) {
   res.json(result);
 });
 
-app.enable('trust proxy');
-
-app.use(express_enforces_ssl.HTTPS());
 
 app.listen(port, function() {
   console.log("✔ Express server listening on port %d ", port);
