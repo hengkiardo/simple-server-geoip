@@ -9,7 +9,7 @@ var port = process.env.PORT || 5000;
 
 app.enable('trust proxy');
 
-app.use(express_enforces_ssl.HTTPS());
+app.use(express_enforces_ssl());
 
 app.get('/country', function (req, res, next) {
   res.json(countries);
